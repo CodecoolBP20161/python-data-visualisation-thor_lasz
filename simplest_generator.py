@@ -3,10 +3,11 @@ from PIL import ImageFont
 from PIL import ImageDraw
 from PIL import ImageOps
 import math
-import main
+from datamanager import DataManager
 from random import randint
 
-imported_dict = main.clients_name()
+datamanager = DataManager()
+imported_dict = datamanager.clients_name()
 img = Image.new("RGB", (700, 700), "black")
 draw = ImageDraw.Draw(img)
 x = 1
