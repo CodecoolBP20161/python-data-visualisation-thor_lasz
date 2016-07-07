@@ -3,7 +3,7 @@ import psycopg2
 def runSql(query):
     try:
         # gitben database_config.txt-be elmenteni zet a stringet
-        connect_str = "dbname='handris' user='handris' host='localhost' password='119456qw'"
+        connect_str = "dbname='kalman' user='kalman' host='localhost' password='thorma'"
         conn = psycopg2.connect(connect_str)
         conn.autocommit = True
         cursor = conn.cursor()
