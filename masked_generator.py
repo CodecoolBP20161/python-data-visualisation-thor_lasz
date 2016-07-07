@@ -13,16 +13,18 @@ draw = ImageDraw.Draw(img)
 x = 500
 y = 100
 y_sizes = []
-counter = 20
+counter = 2
 mask = []
 if len(imported_dict) %2 == 1:
     mask = [0]
 for i in range(int((len(imported_dict)/2))):
     mask.append(-1 * counter)
     mask.insert(0, counter)
-    counter += 1
+    counter += 2
 print (mask)
-
+counter = 0
+print (len(mask))
+print (len(imported_dict))
 for key, val in imported_dict.items():
 
 
@@ -31,9 +33,9 @@ for key, val in imported_dict.items():
     text_content = key                            #szöveg
     text_size = draw.textsize(text_content, font=font)
 
-    if text_size[0] > 500 + counter*4 - x:
+    if text_size[0] > 500 + 8*mask[counter]- x:
         y += max(y_sizes)
-        x = 500 - 4*counter
+        x = 500 - 8*mask[counter]
         y_sizes = []
 
     draw.text((x, y), text_content, **text_options)
